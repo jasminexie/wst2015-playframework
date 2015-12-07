@@ -18,3 +18,8 @@ routesGenerator := InjectedRoutesGenerator
 
 
 fork in run := false
+
+val appDependencies = Seq(
+  // Add your project dependencies here,
+  "mysql" % "mysql-connector-java" % "5.7.9"
+)
