@@ -1,0 +1,30 @@
+@main("Homework 9") {
+    <h1>Question 1</h1>
+    <p>Develop an MVC style web application for the survey in Week 3. Explain your code in 100-500 words.</p>
+    <p>Configure a reverse proxy on Apache for your MVC framework.</p>
+    <p>Optional: set up two MVC frameworks. Configure Apache to handle hot backups and load balancing.</p>
+    <hr/>
+    <p>o_O</p>
+    <hr/>
+
+<div class="main" style="margin: auto auto 50px auto;" id="form">
+    <label for="name">Name</label><input id="name" type="text" name="name" required="required"/><br/>
+    <label for="age">Age</label><input id="age" type="number" name="age" required="required"/><br/>
+    <label for="male">Gender</label>
+    <input type="radio" id="male" name = "gender"  value = "Male" /> Male <br/>
+    <label for="female">&nbsp;</label>
+    <input type = "radio" id="female" name = "gender"  value = "Female" /> Female <br/>
+    <label for="female">&nbsp;</label>
+    <input type = "radio" id="other" name = "gender"  value = "Other" /> Other <br/>
+    <label for="email">Email</label><input id="email" type="email" name="email" style="margin-bottom: 10px" required="required"/><br/>
+    <div style="text-align: center">
+        <input type = "submit" id="submit" value = "Submit Form" onclick=""/>
+        <input type = "reset" id="reset" value = "Clear Form" onclick=""/><br/>
+        <input type="submit" style="width: 300px;" id="view" value="View all submissions" onclick="window.location.href='viewguests.php'"/>
+        <div class="alert alert-success" id="success" style="display:none; "></div>
+        <div class="alert alert-warning" id="info" style="display:none; "></div>
+        <div class="alert alert-error" id="error" style="display:none; "></div>
+    </div>
+</div>
+
+}
