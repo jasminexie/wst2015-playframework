@@ -9,7 +9,8 @@ scalaVersion := "2.11.6"
 libraryDependencies ++= Seq(
   javaJdbc,
   cache,
-  javaWs
+  javaWs,
+  "mysql" % "mysql-connector-java" % "5.1.18"
 )
 
 // Play provides two styles of routers, one expects its actions to be injected, the
@@ -18,8 +19,3 @@ routesGenerator := InjectedRoutesGenerator
 
 
 fork in run := false
-
-val appDependencies = Seq(
-  // Add your project dependencies here,
-  "mysql" % "mysql-connector-java" % "5.7.9"
-)

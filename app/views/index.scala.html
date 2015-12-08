@@ -24,9 +24,9 @@
     <input type = "radio" id="other" name = "gender"  value = "Other" /> Other <br/>
     <label for="email">Email</label><input id="email" type="email" name="email" style="margin-bottom: 10px" required="required"/><br/>
     <div style="text-align: center">
-        <input type = "submit" id="submit" value = "Submit Form" onclick=""/>
+        <input type = "submit" id="submit" value = "Submit Form"/>
         <input type = "reset" id="reset" value = "Clear Form" onclick="reset()"/><br/>
-        <input type="submit" style="width: 300px;" id="view" value="View all submissions"/>
+        <input type="button" style="width: 300px;" id="view" value="View all submissions" onclick="window.location.href='/results'"/>
         <div class="alert alert-success" id="success" style="display:none; "></div>
         <div class="alert alert-warning" id="info" style="display:none; "></div>
         <div class="alert alert-error" id="error" style="display:none; "></div>
