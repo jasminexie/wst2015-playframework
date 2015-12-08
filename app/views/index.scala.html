@@ -33,4 +33,26 @@
     </div>
 </form>
 
+<script>
+    $("#form").keyup(function (e) {
+    if (e.keyCode == 13) {
+    var name = $("#name").val();
+    var age = $("#age").val();
+    var email = $("#email").val();
+    var gender = $("input[name='gender']:checked").val();
+
+    if (age&&name&&gender&&email) {
+    send();
+    }
+    }
+    });
+
+    function reset() {
+  		$(':input')
+  		.not(':button, :submit, :reset, :hidden, :radio')
+  		.val('');
+  		$('input[type=radio]').removeAttr('checked');
+		}
+    </script>
+
 }
