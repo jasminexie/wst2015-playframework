@@ -110,6 +110,7 @@ public class Application extends Controller {
                     resultset.getString("ip"),
                     resultset.getInt("timestamp")));
         }
+        connection.close();
         return array;
     }
 
@@ -119,6 +120,7 @@ public class Application extends Controller {
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1,id);
         statement.execute();
+        connection.close();
     }
 
 }

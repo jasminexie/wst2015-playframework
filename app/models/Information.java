@@ -70,7 +70,9 @@ public class Information {
         statement.setString(5,ip);
         statement.setLong(6, ts);
 
-        return statement.execute();
+        boolean res = statement.execute();
+        connection.close();
+        return res;
     }
 
 
