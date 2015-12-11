@@ -24,7 +24,7 @@ public class Application extends Controller {
         try {
             List<Information> list = getAllGuests();
             if (list.isEmpty())
-                return ok();
+                return ok(fail.render("Oops, no results in the database! SOMEONE must have deleted everything."));
             else
                 return ok(results.render(list));
         } catch (SQLException e) {
