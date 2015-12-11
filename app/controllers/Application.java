@@ -60,9 +60,11 @@ public class Application extends Controller {
     public Result delete() {
         DynamicForm in = Form.form().bindFromRequest();
         Collection<String> values = in.data().values();
+        long ts = new Date().getTime();
+        String ip = request().remoteAddress();
         for (String id:values) {
             try {
-                deleteGuest(new Integer(id));
+                deleteGuest(new Integer(id),ts,ip);
             } catch (Exception e) {
                 return ok(fail.render("Internal server error."));
             }
@@ -114,11 +116,13 @@ public class Application extends Controller {
         return array;
     }
 
-    private void deleteGuest(int id) throws SQLException {
+    private void deleteGuest(int id, long ts, String ip) throws SQLException {
         Connection connection = DB.getConnection();
-        String query = "UPDATE guest SET deleted=1 where gid=?";
+        String query = "UPDATE guest SET deleted=1,dts=?,dip=? where gid=?";
         PreparedStatement statement = connection.prepareStatement(query);
-        statement.setInt(1,id);
+        statement.setInt(3,id);
+        statement.setLong(1,ts);
+        statement.setString(2,ip);
         statement.execute();
         connection.close();
     }
